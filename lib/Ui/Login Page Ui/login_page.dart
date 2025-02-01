@@ -17,13 +17,17 @@ class LoginPageState extends State<LoginPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              mBackIcon(),mSizedBox(mHeight: 30),
+              mSizedBox(mHeight: 30),
               Container(
                 width: double.infinity,
                 child: Text("Sign in now" , style: TextStyle(fontFamily: "Sfui" , fontSize: 35 , fontWeight: FontWeight.normal),textAlign: TextAlign.center,),

@@ -11,13 +11,16 @@ class ForgetPage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              mBackIcon(),mSizedBox(mHeight: 30),
+              mSizedBox(mHeight: 30),
               Container(
                 width: double.infinity,
                 child: Text("Forget password" , style: TextStyle(fontSize: 35),textAlign: TextAlign.center,),
@@ -34,12 +37,13 @@ class ForgetPage extends StatelessWidget{
                 width: double.infinity,
                 height: 55,
                 child: ElevatedButton(onPressed: (){
+                  Navigator.pushReplacementNamed(context, AppRoutes.ROUTEOTPVERIFYSCREEN);
                   showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
                     actions: [
                       TextButton(onPressed: (){
-                        Navigator.pushNamed(context, AppRoutes.ROUTEOTPVERIFYSCREEN);
+                        Navigator.pushReplacementNamed(context, AppRoutes.ROUTEOTPVERIFYSCREEN);
                       }, style: TextButton.styleFrom(padding: EdgeInsets.all(0) , foregroundColor: Colors.black , backgroundColor: Colors.white) ,child: Text("Enter OTP") )
                     ],
                     contentPadding: EdgeInsets.all(20),

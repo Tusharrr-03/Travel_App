@@ -1,19 +1,34 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app_ui/Data_Routes%20Directory/app_routes.dart';
+import 'package:travel_app_ui/Data_Routes%20Directory/arr_data.dart';
 import 'package:travel_app_ui/Intro_Directory/intro_page.dart';
 
 import '../Intro Page Ui/intro_page.dart';
-
 class DetailDescPage extends StatefulWidget{
+  //final int index;
+
+  //DetailDescPage({required this.index});
   @override
   State<StatefulWidget> createState() => DetailDescPageState();
 }
 class DetailDescPageState extends State<DetailDescPage>{
+  int currentindex = 0;
+
+  /*@override
+  void initState() {
+    super.initState();
+    currentindex = widget.index;
+  }*/
+
   @override
   Widget build(BuildContext context) {
+    final description = arrData.mPlacesDescriptions[currentindex];
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
+      body:
+      Column(
         children: [
           Stack(
             children: [
@@ -21,28 +36,33 @@ class DetailDescPageState extends State<DetailDescPage>{
                 width: double.infinity,
                 height: 815,
               ),
-              Positioned(child: Image.asset("assets/images/bg_WorldPopular3.png", width: double.infinity, height: 480,fit: BoxFit.cover,),),
+              Positioned(child: Image.asset(description['background image'], width: double.infinity, height: 480,fit: BoxFit.cover,),),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 40,  horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      width: 35,
-                      height: 35,
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(20),
-                      ),child: Icon(Icons.arrow_back_ios, size: 17, color: Colors.white,),
+                    InkWell(
+                      onTap: (){
+                        Navigator.pop(context,AppRoutes.ROUTEHOMESCREEN);
+                      },
+                      child: Container(
+                        width: 35,
+                        height: 35,
+                        decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(20),
+                        ),child: Icon(description['header content1'], size: 17, color: Colors.white,),
+                      ),
                     ),
-                    Text("Details" ,style: TextStyle(color: Colors.white , fontSize: 18),),
+                    Text(description['header text'] ,style: TextStyle(color: Colors.white , fontSize: 18),),
                     Container(
                       width: 35,
                       height: 35,
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(20),
-                      ),child: Image.asset("assets/images/icon_bookmark.png"),
+                      ),child: Image.asset(description['header content2']),
                     ),
                   ],
                 ),
@@ -62,18 +82,18 @@ class DetailDescPageState extends State<DetailDescPage>{
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Center(child: Image.asset("assets/images/icon_dash.png")),mSizedBox(),
+                            Center(child: Image.asset(description['dash icon'])),mSizedBox(),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Udaipur" ,style: TextStyle(fontSize: 25),),
-                                    Text("Fateh Sagar Lake" ,style: TextStyle(color: Colors.black54),),
+                                    Text(description['title'],style: TextStyle(fontSize: 25),),
+                                    Text(description['sub title'],style: TextStyle(color: Colors.black54),),
                                   ],
                                 ),
-                                  Image.asset("assets/images/bg_Ellipse 1.png" , width: 50, height: 50, fit: BoxFit.cover,),
+                                  Image.asset(description['profile image'], width: 50, height: 50, fit: BoxFit.cover,),
                                 ],
                               ),mSizedBox(),
                             Row(
@@ -82,17 +102,17 @@ class DetailDescPageState extends State<DetailDescPage>{
                                 Container(
                                   child:Row(
                                     children: [
-                                      Image.asset("assets/images/icon_location.png"),mSizedBox(mHeight: 0, mWidth: 5),
-                                      Text("Udaipur", style: TextStyle(color: Colors.black54),),
+                                      Image.asset(description['location icon']),mSizedBox(mHeight: 0, mWidth: 5),
+                                      Text(description['location text'], style: TextStyle(color: Colors.black54),),
                                     ],
                                   ),
                                 ),
                                 Container(
                                   child:Row(
                                     children: [
-                                      Icon(Icons.star , color: Colors.yellow, size: 16,),mSizedBox(mHeight: 0, mWidth: 5),
-                                      Text("4.7"),mSizedBox(mHeight: 0,mWidth: 4),
-                                      Text("(2500)", style: TextStyle(color: Colors.black54 ,fontSize: 14),),
+                                      Icon(description['rating icon'], color: Colors.yellow, size: 16,),mSizedBox(mHeight: 0, mWidth: 5),
+                                      Text(description['rating text']),mSizedBox(mHeight: 0,mWidth: 4),
+                                      Text(description['review text'], style: TextStyle(color: Colors.black54 ,fontSize: 14),),
                                     ],
                                   ),
                                 ),
@@ -102,11 +122,11 @@ class DetailDescPageState extends State<DetailDescPage>{
                                       Text.rich(TextSpan(
                                         children: [
                                           TextSpan(
-                                            text: "\$59/",
+                                            text: description['money text'],
                                             style: TextStyle(color: Colors.blue),
                                           ),
                                           TextSpan(
-                                            text: "Person",
+                                            text: description['over person text'],
                                             style: TextStyle(color: Colors.black54),
                                           ),
                                         ],
@@ -119,21 +139,21 @@ class DetailDescPageState extends State<DetailDescPage>{
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Image.asset("assets/images/bg_places1.png"),
-                                Image.asset("assets/images/bg_places2.png"),
-                                Image.asset("assets/images/bg_places3.png"),
-                                Image.asset("assets/images/bg_places4.png"),
-                                Image.asset("assets/images/bg_places5.png"),
+                                Image.asset(arrData.mPlacesDescriptions [currentindex]['image 1']),
+                                Image.asset(arrData.mPlacesDescriptions [currentindex]['image 2']),
+                                Image.asset(arrData.mPlacesDescriptions [currentindex]['image 3']),
+                                Image.asset(arrData.mPlacesDescriptions [currentindex]['image 4']),
+                                Image.asset(arrData.mPlacesDescriptions [currentindex]['image 5']),
                               ],
                             ),mSizedBox(),
-                            Text("About Destination" , style: TextStyle(fontSize: 22),),mSizedBox(mHeight: 10),
+                            Text(description['about us heading'], style: TextStyle(fontSize: 22),),mSizedBox(mHeight: 10),
                             Text.rich(TextSpan(
                               children: [
                                 TextSpan(
-                                  text: "You will get a complete travel package on the beaches. Packages in the form of airline tickets, recommended Hotel rooms, Transportation, Have you ever been on holiday to the Greek ETC...", style: TextStyle(color: Colors.black54),
+                                  text: arrData.mPlacesDescriptions [currentindex]['about us text1'], style: TextStyle(color: Colors.black54),
                                 ),
                                 TextSpan(
-                                  text: " Read More",style: TextStyle(color: Colors.deepOrange),
+                                  text: arrData.mPlacesDescriptions [currentindex]['about us text2'],style: TextStyle(color: Colors.deepOrange),
                                 )
                               ]
                             )),mSizedBox(mHeight: 10),

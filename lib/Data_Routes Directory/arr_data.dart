@@ -33,6 +33,51 @@ class arrData {
   /// Home Page Content
   static final List<Map<String, dynamic>> mPlacesData = [
     {
+      'Places_title' : 'Popular Destinations',
+      'Popular Places' : [
+        {
+          'image' : "assets/images/bg_WorldPopular1.png",
+          'icon1' : "assets/images/icon_bookmark.png",
+          'title' : "Paris",
+          'icon2' : Icons.star,
+          'icon text' : "4.7",
+          'icon3' : "assets/images/icon_location.png",
+          'sub title' : "United Kingdom",
+          'profile1' : "assets/images/bg_Ellipse 1.png",
+          'profile2' : "assets/images/bg_Ellipse 2.png",
+          'profile3' : "assets/images/bg_Ellipse 3.png",
+          'profile4' : "assets/images/Group 11.png",
+        },
+        {
+          'image' : "assets/images/bg_WorldPopular2.png",
+          'icon1' : "assets/images/icon_bookmark.png",
+          'title' : "london",
+          'icon2' : Icons.star,
+          'icon text' : "4.7",
+          'icon3' : "assets/images/icon_location.png",
+          'sub title' : "Big Ben",
+          'profile1' : "assets/images/bg_Ellipse 1.png",
+          'profile2' : "assets/images/bg_Ellipse 2.png",
+          'profile3' : "assets/images/bg_Ellipse 3.png",
+          'profile4' : "assets/images/Group 11.png",
+        },
+        {
+          'image' : "assets/images/bg_WorldPopular3.png",
+          'icon1' : "assets/images/icon_bookmark.png",
+          'title' : "Udaipur",
+          'icon2' : Icons.star,
+          'icon text' : "4.7",
+          'icon3' : "assets/images/icon_location.png",
+          'sub title' : "India",
+          'profile1' : "assets/images/bg_Ellipse 1.png",
+          'profile2' : "assets/images/bg_Ellipse 2.png",
+          'profile3' : "assets/images/bg_Ellipse 3.png",
+          'profile4' : "assets/images/Group 11.png",
+        },
+      ],
+
+    },
+    {
       'Places_title' : 'India',
       'Popular Places' : [
         {
@@ -49,11 +94,11 @@ class arrData {
           'profile4' : "assets/images/Group 11.png",
         },
         {
-          'image' : "assets/images/bg_WorldPopular3.png",
+          'image' : "assets/images/bg_WorldPopular2.png",
           'icon1' : "assets/images/icon_bookmark.png",
-          'title' : "Udaipur",
+          'title' : "Jaipur",
           'icon2' : Icons.star,
-          'icon text' : "4.7",
+          'icon text' : "4.3",
           'icon3' : "assets/images/icon_location.png",
           'sub title' : "India",
           'profile1' : "assets/images/bg_Ellipse 1.png",
@@ -62,11 +107,11 @@ class arrData {
           'profile4' : "assets/images/Group 11.png",
         },
         {
-          'image' : "assets/images/bg_WorldPopular3.png",
+          'image' : "assets/images/bg_WorldPopular1.png",
           'icon1' : "assets/images/icon_bookmark.png",
-          'title' : "Udaipur",
+          'title' : "Jodhpur",
           'icon2' : Icons.star,
-          'icon text' : "4.7",
+          'icon text' : "5.0",
           'icon3' : "assets/images/icon_location.png",
           'sub title' : "India",
           'profile1' : "assets/images/bg_Ellipse 1.png",
@@ -96,7 +141,7 @@ class arrData {
         {
           'image' : "assets/images/bg_WorldPopular1.png",
           'icon1' : "assets/images/icon_bookmark.png",
-          'title' : "Pais",
+          'title' : "Paris",
           'icon2' : Icons.star,
           'icon text' : "5.0",
           'icon3' : "assets/images/icon_location.png",
@@ -123,5 +168,193 @@ class arrData {
     },
   ];
 
+  /// Detail Page Description
+  static final List<Map<String,dynamic>> mPlacesDescriptions = [
+    {
+      'background image' : 'assets/images/bg_WorldPopular3.png',
+      'header content1' : Icons.arrow_back_ios,
+      'header text' : 'Details',
+      'header content2' : 'assets/images/icon_bookmark.png',
+      'dash icon' : 'assets/images/icon_dash.png',
+      'title' : 'Udaipur',
+      'sub title' : 'Fateh Sagar Lake',
+      'profile image' : 'assets/images/bg_Ellipse 1.png',
+      'location icon' : 'assets/images/icon_location.png',
+      'location text' : 'India',
+      'rating icon' : Icons.star,
+      'rating text' : '4.7',
+      'review text' : '(2500)',
+      'money text' : '\$59/',
+      'over person text' : 'Person',
+      'image 1' : 'assets/images/bg_places1.png',
+      'image 2' : 'assets/images/bg_places2.png',
+      'image 3' : 'assets/images/bg_places3.png',
+      'image 4' : 'assets/images/bg_places4.png',
+      'image 5' : 'assets/images/bg_places5.png',
+      'about us heading' : 'About Destination',
+      'about us text1' : 'You will get a complete travel package on the beaches. Packages in the form of airline tickets, recommended Hotel rooms, Transportation, Have you ever been on holiday to the Greek ETC...',
+      'about us text2' : 'Read me',
+    },
+    {
+      'background image' : 'assets/images/bg_WorldPopular2.png',
+      'header content1' : Icons.arrow_back_ios,
+      'header text' : 'Details',
+      'header content2' : 'assets/images/icon_bookmark.png',
+      'dash icon' : 'assets/images/icon_dash.png',
+      'title' : 'London',
+      'sub title' : 'Big Ben',
+      'profile image' : 'assets/images/bg_Ellipse 1.png',
+      'location icon' : 'assets/images/icon_location.png',
+      'location text' : 'United Kingdom',
+      'rating icon' : Icons.star,
+      'rating text' : '4.0',
+      'review text' : '(2500)',
+      'money text' : '\$59/',
+      'over person text' : 'Person',
+      'image 1' : 'assets/images/bg_places1.png',
+      'image 2' : 'assets/images/bg_places2.png',
+      'image 3' : 'assets/images/bg_places3.png',
+      'image 4' : 'assets/images/bg_places4.png',
+      'image 5' : 'assets/images/bg_places5.png',
+      'about us heading' : 'About Destination',
+      'about us text1' : 'You will get a complete travel package on the beaches. Packages in the form of airline tickets, recommended Hotel rooms, Transportation, Have you ever been on holiday to the Greek ETC...',
+      'about us text2' : 'Read me',
+    },
+    {
+      'background image' : 'assets/images/bg_WorldPopular3.png',
+      'header content1' : Icons.arrow_back_ios,
+      'header text' : 'Details',
+      'header content2' : 'assets/images/icon_bookmark.png',
+      'dash icon' : 'assets/images/icon_dash.png',
+      'title' : 'Udaipur',
+      'sub title' : 'Fateh Sagar Lake',
+      'profile image' : 'assets/images/bg_Ellipse 1.png',
+      'location icon' : 'assets/images/icon_location.png',
+      'location text' : 'India',
+      'rating icon' : Icons.star,
+      'rating text' : '4.7',
+      'review text' : '(2500)',
+      'money text' : '\$59/',
+      'over person text' : 'Person',
+      'image 1' : 'assets/images/bg_places1.png',
+      'image 2' : 'assets/images/bg_places2.png',
+      'image 3' : 'assets/images/bg_places3.png',
+      'image 4' : 'assets/images/bg_places4.png',
+      'image 5' : 'assets/images/bg_places5.png',
+      'about us heading' : 'About Destination',
+      'about us text1' : 'You will get a complete travel package on the beaches. Packages in the form of airline tickets, recommended Hotel rooms, Transportation, Have you ever been on holiday to the Greek ETC...',
+      'about us text2' : 'Read me',
+    },
+  ];
+
+  /// Notification Panel
+  static final List<Map<String, dynamic>> mRecentNotification =[
+
+    {
+      'list1RecentTab' : [
+        {
+          'profile' : 'assets/images/bg_Ellipse 1.png',
+          'title' : 'Super Offer',
+          'sub title' : 'get 60% off on first booking',
+          'date' : 'Sun, 12:40pm',
+        },
+        {
+          'profile' : 'assets/images/icon_Red_bus.png',
+          'title' : 'Red bus',
+          'sub title' : 'get 20% off on any ride',
+          'date' : 'Sun, 2:14pm',
+        },
+        {
+          'profile' : 'assets/images/icon_makemytrip.png',
+          'title' : 'Make my trip',
+          'sub title' : 'Make your trip joyful with us',
+          'date' : 'Sun, 10:14pm',
+        },
+        {
+          'profile' : 'assets/images/icon_flightbooking.png',
+          'title' : 'Ixigo',
+          'sub title' : 'Book your flights with single tap',
+          'date' : 'Sun, 10:14pm',
+        },
+      ]
+    },
+    /*{
+      'list1EarlierTab' : [
+        {
+          'profile' : 'assets/images/bg_Ellipse 1.png',
+          'title' : 'Offer',
+          'sub title' : 'get 60% off on first booking',
+          'date' : 'Sat, 12:40pm',
+        },
+        {
+          'profile' : 'assets/images/icon_Red_bus.png',
+          'title' : 'Red bus',
+          'sub title' : 'get 20% off on any ride',
+          'date' : 'Wed, 2:14pm',
+        },
+        {
+          'profile' : 'assets/images/icon_makemytrip.png',
+          'title' : 'Make my trip',
+          'sub title' : 'Make your trip joyful with us',
+          'date' : 'Thur, 10:14pm',
+        },
+        {
+          'profile' : 'assets/images/icon_flightbooking.png',
+          'title' : 'Ixigo',
+          'sub title' : 'Book your flights with single tap',
+          'date' : 'Sat, 10:14pm',
+        },
+      ]
+    },*/
+  ];
+
+  /// Popular Places
+  static final List<Map<String, dynamic>> mPopularplacesData = [
+    {
+      'background image' : 'assets/images/bg_WorldPopular1.png',
+      'stack icon' : 'assets/images/icon_heart.png',
+      'text' : 'Eieffel Tower',
+      'location icon' : 'assets/images/icon_location.png',
+      'location text' : 'Paris , France',
+      'review icon' : Icons.star,
+      'Review text' : '4.7',
+      'money text' : '\$459/',
+      'Person text' : 'Person',
+    },
+    {
+      'background image' : 'assets/images/bg_WorldPopular2.png',
+      'stack icon' : 'assets/images/icon_heart.png',
+      'text' : 'Big-Ben',
+      'location icon' : 'assets/images/icon_location.png',
+      'location text' : 'London , France',
+      'review icon' : Icons.star,
+      'Review text' : '4.7',
+      'money text' : '\$459/',
+      'Person text' : 'Person',
+    },
+    {
+      'background image' : 'assets/images/bg_WorldPopular3.png',
+      'stack icon' : 'assets/images/icon_heart.png',
+      'text' : 'Fateh Sagar Lake',
+      'location icon' : 'assets/images/icon_location.png',
+      'location text' : 'Rajasthan ,India',
+      'review icon' : Icons.star,
+      'Review text' : '4.7',
+      'money text' : '\$459/',
+      'Person text' : 'Person',
+    },
+    {
+      'background image' : 'assets/images/bg_WorldPopular4.png',
+      'stack icon' : 'assets/images/icon_heart.png',
+      'text' : 'Rome',
+      'location icon' : 'assets/images/icon_location.png',
+      'location text' : 'Rome ,Italy',
+      'review icon' : Icons.star,
+      'Review text' : '4.7',
+      'money text' : '\$459/',
+      'Person text' : 'Person',
+    },
+  ];
 }
+
 

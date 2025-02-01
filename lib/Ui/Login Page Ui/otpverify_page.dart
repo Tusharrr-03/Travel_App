@@ -18,6 +18,22 @@ class OtpVerificationPage extends StatefulWidget{
   State<StatefulWidget> createState() => OtpVerificationPageState();
 }
 class OtpVerificationPageState extends State<OtpVerificationPage>{
+  int timercount = 90;
+  late Timer timer;
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 90), (){
+      if(timercount > 0){
+        timercount --;
+      }else{
+        timer.cancel();
+      }
+      setState(() {
+
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,11 +58,14 @@ class OtpVerificationPageState extends State<OtpVerificationPage>{
                   mTextFieldOtp(mController: mNo3),mSizedBox(mHeight: 0 , mWidth: 20),
                   mTextFieldOtp(mController: mNo4),mSizedBox(mHeight: 0 , mWidth: 20),
                 ],
-              ),mSizedBox(mHeight: 40),
+              ),mSizedBox(mHeight: 20),
+              Container(
+                width: double.infinity,
+                  child: Text("Resend OTP in: $timercount seconds",textAlign: TextAlign.right,style: TextStyle(fontSize: 14 , color: Colors.black54),)),mSizedBox(mHeight: 20),
               Container(
                 width: double.infinity,
                 child: ElevatedButton(onPressed: (){
-                  Navigator.pushReplacementNamed(context, AppRoutes.ROUTEHOMESCREEN);
+                  Navigator.pushReplacementNamed(context, AppRoutes.ROUTECREATENEWPASSSCREEN);
                 }, style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                   foregroundColor: Colors.white,

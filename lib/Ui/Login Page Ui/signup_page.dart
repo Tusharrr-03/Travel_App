@@ -16,17 +16,16 @@ class SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              InkWell(onTap: (){
-                Navigator.pop(context, AppRoutes.ROUTELOGINSCREEN);
-              },
-                child: mBackIcon()
-              ),mSizedBox(mHeight: 30),
+              mSizedBox(mHeight: 30),
               Container(
                 width: double.infinity,
                 child: Text("Sign up now" , style: TextStyle(fontSize: 30),textAlign: TextAlign.center,),
