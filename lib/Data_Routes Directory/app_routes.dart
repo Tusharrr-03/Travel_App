@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:travel_app_ui/Login%20Pages/create_new_pass.dart';
 import 'package:travel_app_ui/Login%20Pages/forget_page.dart';
+import 'package:travel_app_ui/Ui/Home%20Page%20Ui/Home%20Page%20Display/img_placeDetail.dart';
 import 'package:travel_app_ui/Ui/Home%20Page%20Ui/Popular%20Places%20Page/popular_place_desc.dart';
 import 'package:travel_app_ui/Ui/Home%20Page%20Ui/Popular%20Places%20Page/popular_places.dart';
 import 'package:travel_app_ui/Ui/Home%20Page%20Ui/Home%20Page%20Display/detail_desc_page.dart';
@@ -11,6 +12,7 @@ import 'package:travel_app_ui/Login%20Pages/otpverify_page.dart';
 import 'package:travel_app_ui/Intro_Directory/second_page.dart';
 import 'package:travel_app_ui/Login%20Pages/signup_page.dart';
 import 'package:travel_app_ui/Ui/Home%20Page%20Ui/Notification%20Panel/notification_page.dart';
+import 'package:travel_app_ui/Ui/Profile%20Ui/profileImage_set.dart';
 import 'package:travel_app_ui/Ui/Profile%20Ui/profile_page.dart';
 import 'package:travel_app_ui/Ui/Profile%20Ui/profile_page_edit.dart';
 import 'package:travel_app_ui/splash_screen.dart';
@@ -37,8 +39,10 @@ class AppRoutes{
   static const String ROUTECREATENEWPASSSCREEN = '/create new password';
   static const String ROUTEHOMESCREEN = '/home page';
   static const String ROUTEPOPULARPLACESSCREEN = '/popular places page';
+  static const String ROUTEIMAGEPLACEDESCRIPTION = '/detailed description of place in Image';
   static const String ROUTEPROFILESCREEN = '/profile page';
   static const String ROUTEPROFILEEDITSCREEN = '/profile page edit';
+  static const String ROUTEPROPFILEPICTURESCREEN = '/profile image set';
   static const String ROUTENOTIFICATIONSCREEN = '/notification column';
   //static const String ROUTEDETAILSCREEN = '/detail page';
   //static const String ROUTEPOPULARPLACEDESCREEN = '/popular places description';
@@ -57,9 +61,11 @@ class AppRoutes{
     ROUTECREATENEWPASSSCREEN : (contex) => CreateNewPassPage(),
     ROUTEHOMESCREEN : (contex) => HomePage(),
     ROUTEPOPULARPLACESSCREEN : (contex) => PopularPlacesPage(),
+    ROUTEIMAGEPLACEDESCRIPTION : (contex) => ImgPlacedetail(),
     //ROUTEPOPULARPLACEDESCREEN : (contex) => PopularPlaceDesc(selectedIndex: index),
     ROUTEPROFILESCREEN : (contex) => ProfilePage(),
     ROUTEPROFILEEDITSCREEN : (contex) => ProfilePageEdit(),
+    ROUTEPROPFILEPICTURESCREEN : (context) => ProfileimageSet(),
     ROUTENOTIFICATIONSCREEN : (context) => NotificationPage(),
     //ROUTEDETAILSCREEN : (context) => DetailDescPage(),
   };

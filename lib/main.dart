@@ -10,6 +10,8 @@ import 'package:travel_app_ui/Login%20Pages/login_page.dart';
 import 'package:travel_app_ui/Login%20Pages/signup_page.dart';
 import 'package:travel_app_ui/Ui/Home%20Page%20Ui/Notification%20Panel/notification_page.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:travel_app_ui/Ui/Profile%20Ui/profileImage_set.dart';
+import 'package:travel_app_ui/Ui/Profile%20Ui/profile_page.dart';
 
 
 void main(){
@@ -23,7 +25,7 @@ class TravelApp extends StatelessWidget{
       theme: ThemeData(
         fontFamily: 'Geometr',
       ),
-      //home: HomePage(),
+      //home: ProfileimageSet(),
       initialRoute: AppRoutes.ROUTESPLASHSCREEN,
       routes: AppRoutes.getroutes(),
     );

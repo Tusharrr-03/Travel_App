@@ -154,7 +154,7 @@ class HomePageState extends State<HomePage> {
                               InkWell(
                                 onTap: (){
                                   Navigator.push(
-                                      context, MaterialPageRoute(builder: (context) => DetailDescPage(currentIndex: index)));
+                                      context, MaterialPageRoute(builder: (context) => DetailDescPage(currentIndex: index ,parentIndex: 0,)));
                                 },
                                 child: Stack(
                                   children: [
@@ -279,7 +279,7 @@ class HomePageState extends State<HomePage> {
                               InkWell(
                                 onTap: () {
                                   Navigator.push(
-                                    context, MaterialPageRoute(builder: (context) => DetailDescPage(currentIndex: index)));
+                                    context, MaterialPageRoute(builder: (context) => DetailDescPage(currentIndex: index,parentIndex:1)));
                                 },
                                 child: Stack(
                                   children: [
@@ -402,7 +402,7 @@ class HomePageState extends State<HomePage> {
                             children: [
                               InkWell(
                                 onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailDescPage(currentIndex: index)));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailDescPage(currentIndex: index , parentIndex: 2,)));
                                 },
                                 child: Stack(
                                   children: [

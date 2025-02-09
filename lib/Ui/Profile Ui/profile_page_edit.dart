@@ -43,7 +43,9 @@ class ProfilePageEdit extends StatelessWidget {
               ),mSizedBox(mHeight: 40),
 
 
-              Center(child: Image.asset("assets/images/bg_ProfileImg.png" , width: 80, height: 80, fit: BoxFit.cover,)),mSizedBox(),
+              Center(child: InkWell(onTap:(){
+                Navigator.pushNamed(context, AppRoutes.ROUTEPROPFILEPICTURESCREEN);
+              },child: Image.asset("assets/images/bg_ProfileImg.png" , width: 80, height: 80, fit: BoxFit.cover,))),mSizedBox(),
               Center(child: Text("Leonardo" , style: TextStyle(fontSize: 20),)),
               Center(child: Text("Change Profile Picture" , style: TextStyle(fontSize: 18 , color: Colors.blue),)),mSizedBox(),
 

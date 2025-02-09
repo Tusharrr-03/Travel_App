@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_ui/Data_Routes%20Directory/app_routes.dart';
 import 'package:travel_app_ui/Data_Routes%20Directory/arr_data.dart';
 import 'package:travel_app_ui/Ui/Intro%20Page%20Ui/intro_page.dart';
 
 class DetailDescPage extends StatelessWidget {
   int currentIndex;
-  DetailDescPage({required this.currentIndex});
+  DetailDescPage({required this.currentIndex , required this.parentIndex});
+  int parentIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,9 @@ class DetailDescPage extends StatelessWidget {
               Container(
                 height: 815,
               ),
-              Positioned(child: Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['background image'] , height: 600 , width: double.infinity ,fit: BoxFit.cover,),),
+              Positioned(child: InkWell(onTap:(){
+                Navigator.pushNamed(context, AppRoutes.ROUTEIMAGEPLACEDESCRIPTION);
+              },child: Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['background image'] , height: 600 , width: double.infinity ,fit: BoxFit.cover,)),),
               Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: Row(
@@ -29,16 +33,17 @@ class DetailDescPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(20)
-                      ),child: Icon(arrData.mPlacesData[0]['Popular Places'][currentIndex]['header content1'] , color: Colors.white, size: 16,),
+                      ),child: InkWell(onTap: (){Navigator.pop(context,AppRoutes.ROUTEHOMESCREEN);},
+                        child: Icon(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['header content1'] , color: Colors.white, size: 16,)),
                     ),
-                    Text(arrData.mPlacesData[0]['Popular Places'][currentIndex]['header text'],style: TextStyle(color: Colors.white ,fontSize: 22),),
+                    Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['header text'],style: TextStyle(color: Colors.white ,fontSize: 22),),
                     Container(
                       width: 30,
                       height: 30,
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(20)
-                      ),child: Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['header content2']),
+                      ),child: Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['header content2']),
                     ),
                   ],
                 ),
@@ -60,18 +65,18 @@ class DetailDescPage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                              Center(child: Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['dash icon'])),mSizedBox(),
+                              Center(child: Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['dash icon'])),mSizedBox(),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text(arrData.mPlacesData[0]['Popular Places'][currentIndex]['title inside'] , style: TextStyle(fontSize: 30),),
-                                      Text(arrData.mPlacesData[0]['Popular Places'][currentIndex]['sub title inside'] , style: TextStyle(fontSize: 16, color: Colors.black54),)
+                                      Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['title inside'] , style: TextStyle(fontSize: 30),),
+                                      Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['sub title inside'] , style: TextStyle(fontSize: 16, color: Colors.black54),)
                                     ],
                                   ),
-                                  Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['profile image'] , width: 50, height: 50, fit: BoxFit.cover,),
+                                  Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['profile image'] , width: 50, height: 50, fit: BoxFit.cover,),
                                 ],
                               ),mSizedBox(mHeight: 15),
                               Row(
@@ -81,11 +86,11 @@ class DetailDescPage extends StatelessWidget {
                                     width: 100,
                                     child: Row(
                                       children: [
-                                        Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['location icon']),mSizedBox(mWidth: 6 , mHeight: 0),
+                                        Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['location icon']),mSizedBox(mWidth: 6 , mHeight: 0),
                                         Expanded(
                                             child: Text(
                                               overflow: TextOverflow.ellipsis,
-                                              arrData.mPlacesData[0]['Popular Places'][currentIndex]['location text'] , style: TextStyle(color: Colors.black54),)),
+                                              arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['location text'] , style: TextStyle(color: Colors.black54),)),
                                       ],
                                     ),
                                   ),
@@ -93,9 +98,9 @@ class DetailDescPage extends StatelessWidget {
                                     width: 100,
                                     child: Row(
                                       children: [
-                                        Icon(arrData.mPlacesData[0]['Popular Places'][currentIndex]['rating icon'], color: Colors.yellow,size: 18,),mSizedBox(mWidth: 5, mHeight: 0),
-                                        Text(arrData.mPlacesData[0]['Popular Places'][currentIndex]['rating text'],style: TextStyle(fontSize: 16),),mSizedBox(mWidth: 5, mHeight: 0),
-                                        Text(arrData.mPlacesData[0]['Popular Places'][currentIndex]['review text'],style: TextStyle(color: Colors.black54, fontSize: 16),),
+                                        Icon(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['rating icon'], color: Colors.yellow,size: 18,),mSizedBox(mWidth: 5, mHeight: 0),
+                                        Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['rating text'],style: TextStyle(fontSize: 16),),mSizedBox(mWidth: 5, mHeight: 0),
+                                        Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['review text'],style: TextStyle(color: Colors.black54, fontSize: 16),),
                                       ],
                                     ),
                                   ),
@@ -103,8 +108,8 @@ class DetailDescPage extends StatelessWidget {
                                     width: 100,
                                     child: Row(
                                       children: [
-                                        Text(arrData.mPlacesData[0]['Popular Places'][currentIndex]['money text'],style: TextStyle(fontSize: 16,color: Colors.blue,),),mSizedBox(mWidth: 5, mHeight: 0),
-                                        Text(arrData.mPlacesData[0]['Popular Places'][currentIndex]['over person text'],style: TextStyle(color: Colors.black54, fontSize: 16),),
+                                        Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['money text'],style: TextStyle(fontSize: 16,color: Colors.blue,),),mSizedBox(mWidth: 5, mHeight: 0),
+                                        Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['over person text'],style: TextStyle(color: Colors.black54, fontSize: 16),),
                                       ],
                                     ),
                                   ),
@@ -113,14 +118,14 @@ class DetailDescPage extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['image 1']),
-                                Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['image 2']),
-                                Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['image 3']),
-                                Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['image 4']),
-                                Image.asset(arrData.mPlacesData[0]['Popular Places'][currentIndex]['image 5']),
+                                Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['image 1']),
+                                Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['image 2']),
+                                Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['image 3']),
+                                Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['image 4']),
+                                Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['image 5']),
                               ],
                             ),mSizedBox(mHeight: 15),
-                            Text(arrData.mPlacesData[0]['Popular Places'][currentIndex]['about us heading'] ,style: TextStyle(fontSize: 25),),
+                            Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['about us heading'] ,style: TextStyle(fontSize: 25),),
                             GestureDetector(
                               onTap: (){
                                 print("Riched Text Tapped");
@@ -128,10 +133,10 @@ class DetailDescPage extends StatelessWidget {
                               child: Text.rich(TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: arrData.mPlacesData[0]['Popular Places'][currentIndex]['about us text1'],
+                                    text: arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['about us text1'],
                                   ),
                                   TextSpan(
-                                    text: arrData.mPlacesData[0]['Popular Places'][currentIndex]['about us text2'],
+                                    text: arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['about us text2'],
                                     style: TextStyle(color: Colors.deepOrange),
                                   ),
                                 ],
