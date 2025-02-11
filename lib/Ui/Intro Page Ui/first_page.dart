@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app_ui/Intro_Directory/intro_page.dart';
@@ -98,4 +99,4 @@ class FirstPageState extends State<FirstPage>{
       ],
     );
   }
-}
+}*/

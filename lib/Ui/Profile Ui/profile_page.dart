@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travel_app_ui/Data_Routes%20Directory/app_routes.dart';
 import 'package:travel_app_ui/Ui/Intro%20Page%20Ui/intro_page.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:travel_app_ui/Ui/Login%20Page%20Ui/login_page.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+  static const LOGOUT_KEY = '/logout from page';
 
   @override
   State<ProfilePage> createState() => ProfilePageState();
@@ -130,6 +132,8 @@ class ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
+              
+              /// Bookmarked
               Card(
                 color: Color(0XFFFFFFFF),
                 child: Padding(
@@ -154,6 +158,8 @@ class ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
+              
+              /// Previous Trips
               Card(
                 color: Color(0XFFFFFFFF),
                 child: Padding(
@@ -178,6 +184,8 @@ class ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
+              
+              /// Settings
               Card(
                 color: Color(0XFFFFFFFF),
                 child: Padding(
@@ -202,6 +210,8 @@ class ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
+              
+              /// Versions Controls
               Card(
                 color: Color(0XFFFFFFFF),
                 child: Padding(
@@ -223,6 +233,40 @@ class ProfilePageState extends State<ProfilePage> {
                         child: Icon(Iconsax.arrow_left_2 , size: 18,),
                       )
                     ],
+                  ),
+                ),
+              ),
+              
+              /// Log Out Session
+              TextButton(
+                onPressed: () async{
+                  var prefs = await SharedPreferences.getInstance();
+                  prefs.setBool(ProfilePage.LOGOUT_KEY, true);
+
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                }, style: TextButton.styleFrom(padding: EdgeInsets.all(0)),
+                child: Card(
+                  color: Color(0XFFFFFFFF),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: 150,
+                          child: Row(
+                            children: [
+                              Icon(Iconsax.logout),mSizedBox(mWidth: 15 , mHeight: 0),
+                              Text("LogOut", style: TextStyle(fontSize: 19),),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 50,
+                          child: Icon(Iconsax.arrow_left_2 , size: 18,),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

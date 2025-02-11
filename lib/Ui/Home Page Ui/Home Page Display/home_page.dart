@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travel_app_ui/Data_Routes%20Directory/app_routes.dart';
 import 'package:travel_app_ui/Intro_Directory/intro_page.dart';
 import 'package:travel_app_ui/Ui/Home%20Page%20Ui/Home%20Page%20Display/detail_desc_page.dart';
+import 'package:travel_app_ui/Ui/Profile%20Ui/profile_page.dart';
 import '../../../Data_Routes Directory/arr_data.dart';
 import '../../Intro Page Ui/intro_page.dart';
 
@@ -13,6 +17,16 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   int index = 0;
+  @override
+  void initState() {// TODO: implement initState
+    super.initState();
+    Timer(Duration(minutes: 10), ()async{
+      var prefs = await SharedPreferences.getInstance();
+
+      prefs.getBool(ProfilePage.LOGOUT_KEY);
+      Navigator.pushReplacementNamed(context, AppRoutes.ROUTELOGINSCREEN);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +45,8 @@ class HomePageState extends State<HomePage> {
                   children: [
                     InkWell(
                       onTap: (){
-                        Navigator.pushNamed(context, AppRoutes.ROUTEPROFILESCREEN);
+                        ///Navigator.pushNamed(context, AppRoutes.ROUTEPROFILESCREEN);
+                        Navigator.pushReplacement(context , MaterialPageRoute(builder: (context) => ProfilePage()));
                       },
                       child: Container(
                         width: 145,

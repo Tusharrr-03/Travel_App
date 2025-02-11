@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travel_app_ui/Data_Routes%20Directory/app_routes.dart';
 import 'package:travel_app_ui/Intro_Directory/intro_page.dart';
 
@@ -9,24 +11,31 @@ import '../Intro Page Ui/intro_page.dart';
 TextEditingController mEmailController = TextEditingController();
 TextEditingController mPassController = TextEditingController();
 
-class LoginPage extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() => LoginPageState();
-}
-class LoginPageState extends State<LoginPage>{
+class LoginPage extends StatelessWidget {
+  static const LOGIN_KEY = "isLogin";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              TextButton(
+                onPressed: (){
+                  Navigator.pushReplacementNamed(context, AppRoutes.ROUTEINTROSCREEN);
+                },
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(30),
+                  ),child: Icon(Iconsax.arrow_left_2),
+                ),
+              ),
               mSizedBox(mHeight: 30),
               Container(
                 width: double.infinity,
@@ -41,19 +50,21 @@ class LoginPageState extends State<LoginPage>{
               TextButton(onPressed: (){
                 Navigator.pushNamed(context, AppRoutes.ROUTEFORGETSCREEN);
               }, style: TextButton.styleFrom(padding: EdgeInsets.all(0)) ,child: Container(
-                  width: double.infinity,
-                  child: Text("Forget Password?" , style: TextStyle(color: Colors.blue),textAlign: TextAlign.right,),
-                ),
+                width: double.infinity,
+                child: Text("Forget Password?" , style: TextStyle(color: Colors.blue),textAlign: TextAlign.right,),
+              ),
               ),mSizedBox(),
               Container(
                 width: double.infinity,
                 height: 55,
-                child: ElevatedButton(onPressed: (){
+                child: ElevatedButton(onPressed: () async{
+                  var prefs = await SharedPreferences.getInstance();
+                  prefs.setBool(LOGIN_KEY, true);
                   Navigator.pushReplacementNamed(context, AppRoutes.ROUTEHOMESCREEN);
                 }, style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
-                  backgroundColor: Colors.blue,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))
+                    backgroundColor: Colors.blue,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))
                 ) ,child: Text("Sign In" , style: TextStyle(fontSize: 20),)),
               ),mSizedBox(mHeight: 40),
               Row(
@@ -77,6 +88,7 @@ class LoginPageState extends State<LoginPage>{
     );
   }
 }
+
 
 Container mTextField({required bool mObsecureText , required TextEditingController mController , Icon ? mIcon , required String mHint}){
   return Container(
