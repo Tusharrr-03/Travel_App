@@ -98,19 +98,18 @@ import 'package:travel_app_ui/Ui/Intro%20Page%20Ui/intro_page.dart';
 
 class ImgPlacedetail extends StatelessWidget {
   int currentIndex;
-  ImgPlacedetail({required this.currentIndex , required this.parentIndex});
+  ImgPlacedetail({required this.currentIndex, required this.parentIndex});
   int parentIndex;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: arrData.mPlacesData[currentIndex]['Popular Places'].length,
-          itemBuilder: (context , index) {
-            return Stack(
+        body: Stack(
           children: [
             Container(
-              child: Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['background img'],fit: BoxFit.cover,height: 780,),
+              child: Image.asset(arrData
+                  .mPlacesData[parentIndex]['Popular Places'][currentIndex]['background img'],
+                fit: BoxFit.cover, height: 820,),
             ),
 
             /// App Bar Section
@@ -121,8 +120,9 @@ class ImgPlacedetail extends StatelessWidget {
                     child: Row(
                       children: [
                         InkWell(
-                          onTap: (){
-                            Navigator.pop(context , AppRoutes.ROUTEHOMESCREEN);
+                          onTap: () {
+                            Navigator.pop(
+                                context, AppRoutes.ROUTEHOMESCREEN);
                           },
                           child: Container(
                             height: 40,
@@ -130,10 +130,15 @@ class ImgPlacedetail extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: Colors.black54.withOpacity(0.2),
                               borderRadius: BorderRadius.circular(20),
-                            ),child: Icon(arrData.mPlacesData[0]['icon'], color: Colors.white,),
+                            ),
+                            child: Icon(arrData.mPlacesData[0]['icon'],
+                              color: Colors.white,),
                           ),
-                        ),mSizedBox(mHeight: 0, mWidth: 115),
-                        Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['header-text'] , style: TextStyle(fontSize: 19 , color: Colors.black54),)
+                        ), mSizedBox(mHeight: 0, mWidth: 115),
+                        Text(arrData
+                            .mPlacesData[parentIndex]['Popular Places'][currentIndex]['header-text'],
+                          style: TextStyle(
+                              fontSize: 19, color: Colors.black54),)
                       ],
                     ),
                   ),
@@ -152,17 +157,26 @@ class ImgPlacedetail extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.black54.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(20),
-                    ),child: Padding(
+                    ), child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
-                        Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Image1'] , height: 70,fit: BoxFit.cover,),mSizedBox(mHeight: 0,mWidth: 5),
+                        Image.asset(arrData
+                            .mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Image1'],
+                          height: 70, fit: BoxFit.cover,),
+                        mSizedBox(mHeight: 0, mWidth: 5),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Text1'] , style: TextStyle(color: Colors.white , fontSize: 16),),
-                            Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Km'] , style: TextStyle(color: Colors.white , fontSize: 16),),
+                            Text(arrData
+                                .mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Text1'],
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 16),),
+                            Text(arrData
+                                .mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Km'],
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 16),),
                           ],
                         )
                       ],
@@ -184,11 +198,14 @@ class ImgPlacedetail extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.black54.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(20),
-                    ),child: Padding(
+                    ), child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
-                        Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Image2'], height: 70,fit: BoxFit.cover,),mSizedBox(mHeight: 0,mWidth: 5),
+                        Image.asset(arrData
+                            .mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Image2'],
+                          height: 70, fit: BoxFit.cover,),
+                        mSizedBox(mHeight: 0, mWidth: 5),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -198,9 +215,15 @@ class ImgPlacedetail extends StatelessWidget {
                               height: 0,
                               child: Text(
                                 overflow: TextOverflow.ellipsis,
-                                arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Text2'] , style: TextStyle(color: Colors.white , fontSize: 16),),
+                                arrData
+                                    .mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Text2'],
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),),
                             )),
-                            SizedBox(child: Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Km2'], style: TextStyle(color: Colors.white , fontSize: 16),)),
+                            SizedBox(child: Text(arrData
+                                .mPlacesData[parentIndex]['Popular Places'][currentIndex]['chat-Km2'],
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 16),)),
                           ],
                         )
                       ],
@@ -223,33 +246,47 @@ class ImgPlacedetail extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(25),
-                    ),child: Padding(
+                    ), child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-box-TextHeading'] , style: TextStyle(fontSize: 19 , color: Colors.white),),
+                            Text(arrData
+                                .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-box-TextHeading'],
+                              style: TextStyle(
+                                  fontSize: 19, color: Colors.white),),
                             SizedBox(
                               width: 40,
                               child: Row(
                                 children: [
-                                  Icon(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-box-Icon'], color: Colors.yellow,size: 20,),
-                                  Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-box-Text'], style: TextStyle(fontSize: 14 , color: Colors.white),),
+                                  Icon(arrData
+                                      .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-box-Icon'],
+                                    color: Colors.yellow, size: 20,),
+                                  Text(arrData
+                                      .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-box-Text'],
+                                    style: TextStyle(fontSize: 14,
+                                        color: Colors.white),),
                                 ],
                               ),
                             )
                           ],
-                        ),mSizedBox(mHeight: 15),
+                        ), mSizedBox(mHeight: 15),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SizedBox(
                               child: Row(
                                 children: [
-                                  Icon(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Icon'] , color: Colors.white,),mSizedBox(mHeight: 0 ,mWidth: 5),
-                                  Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Text'] , style: TextStyle(color: Colors.white , fontSize: 16),),
+                                  Icon(arrData
+                                      .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Icon'],
+                                    color: Colors.white,),
+                                  mSizedBox(mHeight: 0, mWidth: 5),
+                                  Text(arrData
+                                      .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Text'],
+                                    style: TextStyle(color: Colors.white,
+                                        fontSize: 16),),
                                 ],
                               ),
                             ),
@@ -258,38 +295,52 @@ class ImgPlacedetail extends StatelessWidget {
                               child: Stack(
                                 children: [
                                   Container(
-                                    child: Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Positioned']),
+                                    child: Image.asset(arrData
+                                        .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Positioned']),
                                   ),
                                   Positioned(
                                       left: 15,
-                                      child: Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Positioned2'])
+                                      child: Image.asset(arrData
+                                          .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Positioned2'])
                                   ),
                                   Positioned(
                                       left: 30,
-                                      child: Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Positioned3'])
+                                      child: Image.asset(arrData
+                                          .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Positioned3'])
                                   ),
                                   Positioned(
                                     left: 45,
-                                    child: Image.asset(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Positioned4']),
+                                    child: Image.asset(arrData
+                                        .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col-Positioned4']),
                                   ),
                                 ],
                               ),
                             )
                           ],
-                        ),mSizedBox(mHeight: 15),
+                        ), mSizedBox(mHeight: 15),
                         Row(
                           children: [
-                            Icon(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col2-Icon'], color: Colors.white,),mSizedBox(mWidth: 5),
-                            Text(arrData.mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col2-Text'], style: TextStyle(color: Colors.white , fontSize: 16),),
+                            Icon(arrData
+                                .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col2-Icon'],
+                              color: Colors.white,), mSizedBox(mWidth: 5),
+                            Text(arrData
+                                .mPlacesData[parentIndex]['Popular Places'][currentIndex]['bottom-col2-Text'],
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 16),),
                           ],
-                        ),mSizedBox(mHeight: 5),
+                        ), mSizedBox(mHeight: 5),
                         Container(
                           width: double.infinity,
-                          child: ElevatedButton(onPressed: (){}, style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
-                            foregroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                          ) ,child: Text("See On Map" , style: TextStyle(fontSize: 16),)),
+                          child: ElevatedButton(onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.blue,
+                                foregroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        10)),
+                              ),
+                              child: Text("See On Map",
+                                style: TextStyle(fontSize: 16),)),
                         )
                       ],
                     ),
@@ -298,8 +349,7 @@ class ImgPlacedetail extends StatelessWidget {
                 )
             ),
           ],
-        );
-      })
+        ),
     );
   }
 }

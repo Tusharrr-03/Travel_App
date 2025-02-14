@@ -20,18 +20,20 @@ class OtpVerificationPage extends StatefulWidget{
 class OtpVerificationPageState extends State<OtpVerificationPage>{
   int timercount = 90;
   late Timer timer;
+  String message = "Resend OTP";
+
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 90), (){
+    timer = Timer.periodic(Duration(seconds: 1), (Timer time){
       if(timercount > 0){
         timercount --;
-      }else{
-        timer.cancel();
-      }
-      setState(() {
+        setState(() {
 
-      });
+        });
+      }else{
+        time.cancel();
+      }
     });
   }
   @override
@@ -49,7 +51,7 @@ class OtpVerificationPageState extends State<OtpVerificationPage>{
             children: [
                mSizedBox(mHeight: 40),
               Center(child: Text("OTP Verification" , style: TextStyle(fontSize: 30),)),mSizedBox(),
-              Center(child: Container(width: 300,child: Text("Please check your email www.uihut@gmail.com to see the verification code" , textAlign: TextAlign.center ,style: TextStyle(color: Colors.black54),))),mSizedBox(),
+              Center(child: Container(width: 300,child: Text("Please check your email tushar@gmail.com to see the verification code" , textAlign: TextAlign.center ,style: TextStyle(color: Colors.black54),))),mSizedBox(),
               Text("OTP Code" , style: TextStyle(fontSize: 23),),mSizedBox(),
               Row(
                 children: [
@@ -61,7 +63,14 @@ class OtpVerificationPageState extends State<OtpVerificationPage>{
               ),mSizedBox(mHeight: 20),
               Container(
                 width: double.infinity,
-                  child: Text("Resend OTP in: $timercount seconds",textAlign: TextAlign.right,style: TextStyle(fontSize: 14 , color: Colors.black54),)),mSizedBox(mHeight: 20),
+                  child: InkWell(
+                    onTap: (){},
+                    child: Text(
+                      (timercount == 0 ? message : "In $timercount seconds").toString(),
+                      textAlign: TextAlign.right,
+                      style: TextStyle(fontSize: 14 , color: timercount == 0 ? Colors.blue : Colors.black54),),
+                  )),
+              mSizedBox(mHeight: 20),
               Container(
                 width: double.infinity,
                 child: ElevatedButton(onPressed: (){

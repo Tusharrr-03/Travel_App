@@ -61,7 +61,7 @@ class AppRoutes{
     ROUTECREATENEWPASSSCREEN : (contex) => CreateNewPassPage(),
     ROUTEHOMESCREEN : (contex) => HomePage(),
     ROUTEPOPULARPLACESSCREEN : (contex) => PopularPlacesPage(),
-    ROUTEIMAGEPLACEDESCRIPTION : (contex) => ImgPlacedetail(currentIndex: 0,parentIndex: 0),
+    ROUTEIMAGEPLACEDESCRIPTION : (contex) => ImgPlacedetail(currentIndex:3,parentIndex: 0),
     //ROUTEPOPULARPLACEDESCREEN : (contex) => PopularPlaceDesc(selectedIndex: index),
     ROUTEPROFILESCREEN : (contex) => ProfilePage(),
     ROUTEPROFILEEDITSCREEN : (contex) => ProfilePageEdit(),
